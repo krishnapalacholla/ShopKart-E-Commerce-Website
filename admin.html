@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+ <div class="logo">Admin Dashboard</div>
+ <a href="index.html" class="nav-btn">🏠 Home</a>
+ <button class="theme-toggle" id="themeToggle">🌙</button>
+</header>
+
+<main class="container">
+ <h2>Products (Frontend Admin)</h2>
+ <div id="adminProducts"></div>
+</main>
+
+<script>
+const products=[
+{id:1,name:"Wireless Headphones",price:1999},
+{id:2,name:"Smart Watch",price:2499},
+{id:3,name:"Men's Jacket",price:1499},
+{id:4,name:"Sneakers",price:1899},
+{id:5,name:"JavaScript Book",price:599},
+{id:6,name:"DSA Book",price:799}
+];
+
+const div=document.getElementById("adminProducts");
+products.forEach(p=>{
+ div.innerHTML+=`
+  <div class="card">
+   <h3>${p.name}</h3>
+   <p>₹${p.price}</p>
+   <button class="btn">Edit</button>
+   <button class="btn" style="background:#dc2626">Delete</button>
+  </div>
+ `;
+});
+</script>
+<script src="theme.js"></script>
+
+
+</body>
+</html>

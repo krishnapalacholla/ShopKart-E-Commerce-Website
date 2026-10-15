@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ShopKart</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <header class="navbar">
+        <div class="logo">ShopKart</div>
+        
+        <input type="text" id="searchInput" placeholder="Search products..." class="search-box">
+        
+        <div>
+            <a href="wishlist.html" class="nav-btn">❤️ Wishlist</a>
+            <a href="cart.html" class="nav-btn">🛒 Cart (<span id="cartCount">0</span>)</a>
+            <a href="admin.html" class="nav-btn" id="adminLink" style="display:none">🧑‍💻 Admin</a>
+            <a href="login.html" class="nav-btn">Logout</a>
+            <button class="theme-toggle" id="themeToggle">🌙</button>
+        </div>
+    </header>
+    
+    <main class="container">
+        <div class="products" id="productsList"></div>
+    </main>
+    
+    <script src="script.js"></script>
+    <script src="theme.js"></script>
+</body>
+</html>

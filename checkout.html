@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="center">
+
+<div class="auth-box">
+ <h2>Checkout</h2>
+ <input type="text" placeholder="Full Name" required>
+ <input type="email" placeholder="Email" required>
+ <input type="text" placeholder="Phone" required>
+ <textarea placeholder="Delivery Address" required></textarea>
+ <button class="btn" onclick="place()">Place Order</button>
+</div>
+
+<script>
+function place(){
+ localStorage.setItem("order",localStorage.getItem("cart"));
+ localStorage.removeItem("cart");
+ window.location="order-summary.html";
+}
+</script>
+<script src="theme.js"></script>
+
+
+</body>
+</html>

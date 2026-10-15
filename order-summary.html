@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order Summary</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+ <div class="logo">Order Summary</div>
+ <div>
+  <a href="index.html" class="nav-btn">🏠 Home</a>
+  <a href="admin.html" class="nav-btn" id="adminLink">🧑‍💻 Admin</a>
+ </div>
+</header>
+
+<main class="container">
+ <h2>Your Order</h2>
+ <div id="orderItems"></div>
+ <h3>Total: ₹<span id="total">0</span></h3>
+</main>
+
+<script>
+const role=localStorage.getItem("role");
+if(role!=="admin"){
+ document.getElementById("adminLink").style.display="none";
+}
+
+const items=JSON.parse(localStorage.getItem("order"))||[];
+let total=0;
+const div=document.getElementById("orderItems");
+items.forEach(p=>{
+ total+=p.price;
+ div.innerHTML+=`<p>${p.name} - ₹${p.price}</p>`;
+});
+document.getElementById("total").textContent=total;
+</script>
+<script src="theme.js"></script>
+
+
+</body>
+</html>
